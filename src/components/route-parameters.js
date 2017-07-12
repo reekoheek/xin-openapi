@@ -47,6 +47,10 @@ class RouteParameters extends Component {
   }
 
   getValue () {
+    if (!this.route || !this.route.parameters) {
+      return;
+    }
+
     let lastError;
     let result = Array.prototype.reduce.call(this.querySelectorAll('route-parameter'), (result, el) => {
       try {

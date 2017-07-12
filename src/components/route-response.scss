@@ -34,4 +34,18 @@ route-response {
   .scroll {
     overflow: auto;
   }
+
+  .status-code {
+    color: #fff;
+    background-color: red;
+    border: 1px solid red;
+    font-size: 10px;
+    border-radius: 4px;
+    padding: 2px 4px !important;
+
+    &[code="200"] {
+      background-color: green;
+      border: 1px solid green;
+    }
+  }
 }

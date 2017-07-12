@@ -1,9 +1,8 @@
 route-requestor {
-  display: block;
-  // display: none;
+  display: none;
   margin-bottom: 20px;
 
-  // &.visible {
-  //   display: block;
-  // }
+  &.visible {
+    display: block;
+  }
 }

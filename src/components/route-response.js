@@ -45,11 +45,13 @@ class RouteResponse extends Component {
     }
     this.set('contentTypeOptions', contentTypeOptions);
 
+    this.contentTypeObserved(this.contentType);
+
     this.classList.add('visible');
   }
 
   contentTypeObserved (type) {
-    if (!type) {
+    if (!type || !this.response) {
       this.set('schema', null);
       return;
     }

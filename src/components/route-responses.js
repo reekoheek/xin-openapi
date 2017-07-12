@@ -54,11 +54,12 @@ class RouteResponses extends Component {
         }
       }
 
-      if (code === 'default') {
-        result.unshift(response);
-      } else {
-        result.push(response);
-      }
+      result.push(response);
+      // if (code === 'default') {
+      //   result.unshift(response);
+      // } else {
+      //   result.push(response);
+      // }
     }
 
     this.set('responses', result);
@@ -71,6 +72,10 @@ class RouteResponses extends Component {
   }
 
   getContentType () {
+    if (!this.route || !this.route.responses) {
+      return;
+    }
+
     if (!this.contentType) {
       let err = new Error('Content Type must be set');
       this.set('error', err);

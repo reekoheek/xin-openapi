@@ -30,10 +30,16 @@ export class MyRoute extends View {
   focusing ({ id } = {}) {
     super.focusing({ id });
 
+    if (this.$.requestor.reset) {
+      this.$.requestor.reset();
+    }
+
     let route = this.spec.getRouteById(id);
     this.set('route', route);
 
-    console.warn('route', route);
+    // console.warn('route', route);
+
+    this.$$('.scroll-x').scrollTop = 0;
   }
 
   computeMethodClasses (method) {
@@ -41,6 +47,11 @@ export class MyRoute extends View {
   }
 
   try () {
+    // this.$.requestor.request({
+    //   parameters: {},
+    //   accept: 'application/json',
+    // });
+
     let lastError;
     let parameters;
     try { parameters = this.$.inputParameters.getValue(); } catch (err) { lastError = err; }

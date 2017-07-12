@@ -55,7 +55,7 @@ export class MyApp extends App {
     }
 
     spec.selectedServer = spec.servers[0].url;
-    console.log('spec', spec);
+    // console.warn('spec', spec);
     this.set('spec', spec);
   }
 }

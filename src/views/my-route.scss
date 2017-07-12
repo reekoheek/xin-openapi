@@ -22,6 +22,11 @@ my-route {
       border-radius: 4px;
       padding: 2px 4px!important;
     }
+
+    .route--required {
+      border: 1px solid red;
+      color: red;
+    }
   }
 
   .block {

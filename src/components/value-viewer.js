@@ -39,7 +39,16 @@ class ValueViewer extends Component {
   // }
 
   generate (schema) {
-    return this.schema ? JSON.stringify(this.schema.getDefaultValue(true), null, 2) : '';
+    if (!this.schema) {
+      return '';
+    }
+
+    let generated = this.schema.getDefaultValue(true);
+    if (typeof generated === 'string' || typeof generated === 'number') {
+      return generated;
+    }
+
+    return JSON.stringify(generated, null, 2);
   }
 
   doGenerate (evt) {

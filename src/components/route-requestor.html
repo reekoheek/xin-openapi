@@ -1,1 +1,28 @@
-requestor
+<h4>Result</h4>
+
+<div class="ui-list">
+  <div class="ui-list--item">
+    <label>URL</label>
+    <p>[[url]]</p>
+  </div>
+
+  <div class="ui-list--item">
+    <label>Curl</label>
+    <p><code>[[curl]]</code></p>
+  </div>
+
+  <div class="ui-list--item">
+    <label>Status</label>
+    <p><code>[[response.status]]</code></p>
+  </div>
+
+  <div class="ui-list--item">
+    <label>Headers</label>
+    <pre><code>[[response.headers|json:2]]</code></pre>
+  </div>
+
+  <div class="ui-list--item">
+    <label>Body</label>
+    <pre><code>[[response.body]]</code></pre>
+  </div>
+</div>

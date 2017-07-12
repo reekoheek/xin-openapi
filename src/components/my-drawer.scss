@@ -8,18 +8,23 @@
   line-height: 1em;
   text-align: center;
 
+  border: 1px solid;
   background-color: #61affe;
+  border-color: #61affe;
   color: #fff;
 
   &.route--method-put {
     background-color: #fca130;
+    border-color: #fca130;
   }
 
   &.route--method-post {
     background-color: #49cc90;
+    border-color: #49cc90;
   }
 
   &.route--method-delete {
     background-color: #f93e3e;
+    border-color: #f93e3e;
   }
 }
