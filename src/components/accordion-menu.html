@@ -1,0 +1,15 @@
+<xin-for items="[[menus]]" as="menu">
+  <template>
+    <div class="accordion-menu-group">
+      <h3>[[menu.title]]</h3>
+
+      <div class="accordion-menu-list">
+        <xin-for items="[[menu.links]]" as="link">
+          <template>
+            <a href="[[link.url]]" html="[[link.title]]"></a>
+          </template>
+        </xin-for>
+      </div>
+    </div>
+  </template>
+</xin-for>

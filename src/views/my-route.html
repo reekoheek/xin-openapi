@@ -1,0 +1,31 @@
+<div class="ui-layout ui-layout--v">
+  <header class="ui-header">
+    <div class="ui-header__row">
+      <button class="ui-button ui-button--icon ui-drawer--handle" (click)="__global.drawer.open()">
+        <i class="material-icons">menu</i>
+      </button>
+      <span class="ui-header__title">
+        <sup class$="[[computeMethodClasses(route.method)]]">[[route.method]]</sup>
+        <span class="title--uri">[[route.uri]]</span>
+      </span>
+    </div>
+  </header>
+
+  <div class="ui-padding scroll-x route">
+    <h3>
+      <span>[[route.summary]]</span>
+      <sup class="route__operation-id" hidden="[[route.operationId|not]]">[[route.operationId]]</sup>
+    </h3>
+
+    <p html="[[route.renderedDescription]]"></p>
+
+    <route-parameters id="inputParameters" class="block" route="[[route]]"></route-parameters>
+    <route-body id="inputBody" class="block" route="[[route]]"></route-body>
+
+    <route-responses id="inputResponses" class="block" route="[[route]]"></route-responses>
+
+    <button class="ui-button ui-button--colored" (click)="try()">Try it out</button>
+
+    <route-requestor id="requestor" route="[[route]]"></route-requestor>
+  </div>
+</div>

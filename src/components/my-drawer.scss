@@ -1,0 +1,25 @@
+.route--method {
+  font-size: 10px;
+  border-radius: 4px;
+  padding: 2px 4px;
+  text-transform: uppercase;
+  min-width: 40px;
+  display: inline-block;
+  line-height: 1em;
+  text-align: center;
+
+  background-color: #61affe;
+  color: #fff;
+
+  &.route--method-put {
+    background-color: #fca130;
+  }
+
+  &.route--method-post {
+    background-color: #49cc90;
+  }
+
+  &.route--method-delete {
+    background-color: #f93e3e;
+  }
+}

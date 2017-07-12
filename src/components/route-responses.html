@@ -1,0 +1,9 @@
+<h4>Responses</h4>
+
+<ui-selectfield label="Content Type" options="[[contentTypeOptions]]" value="{{contentType}}" class.error="[[error]]"></ui-selectfield>
+
+<xin-for id="responseList" items="[[responses]]" as="response">
+  <template>
+    <route-response route="[[route]]" content-type="[[contentType]]" response="[[response]]"></route-response>
+  </template>
+</xin-for>

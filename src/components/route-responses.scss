@@ -1,0 +1,14 @@
+route-responses {
+  display: none;
+  margin-bottom: 20px;
+
+  &.visible {
+    display: block;
+  }
+
+  ui-selectfield.error {
+    select {
+      border-bottom: 1px solid red!important;
+    }
+  }
+}

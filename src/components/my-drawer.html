@@ -1,0 +1,10 @@
+<div id="content" class="ui-drawer__content">
+  <div class="ui-list" id="menuList">
+    <a class="ui-list__item" href="#!/">HOME</a>
+  </div>
+
+  <accordion-menu menus="[[menus]]"></accordion-menu>
+  <!--<slot></slot>-->
+</div>
+
+<div class="ui-drawer__overlay" (tap)="close()"></div>

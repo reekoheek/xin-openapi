@@ -1,0 +1,9 @@
+<div class="block">
+  <div class="block__cell block--flex">
+    <h6>[[parameter.name]] <sup class="route--required" hidden="[[parameter.required|not]]">required</sup></h6>
+    <div class="parameter--in">[[parameter.in]]</div>
+    <p>[[parameter.description]]</p>
+  </div>
+  <value-viewer class="block__cell block--flex" schema="[[schema]]" value="{{value}}" class.error="[[error]]"></value-viewer>
+  <schema-viewer class="block__cell block--flex" schema="[[schema]]"></schema-viewer>
+</div>

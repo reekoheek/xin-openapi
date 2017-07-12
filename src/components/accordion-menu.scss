@@ -1,0 +1,25 @@
+accordion-menu {
+  .accordion-menu-group {
+    h3 {
+      font-size: 12px;
+      font-weight: bold;
+      margin: 0;
+      padding: 0 16px;
+      text-transform: uppercase;
+      /*border: 1px solid red;*/
+    }
+  }
+
+  .accordion-menu-list {
+    a {
+      font-size: 16px;
+      display: block;
+      line-height: 40px;
+      border-top: 1px solid #ccc;
+      padding: 0 16px;
+      text-decoration: none;
+      overflow: auto;
+      white-space: nowrap;
+    }
+  }
+}

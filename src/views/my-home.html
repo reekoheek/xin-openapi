@@ -1,0 +1,40 @@
+<div class="ui-layout ui-layout--v">
+  <header class="ui-header">
+    <div class="ui-header__row">
+      <button class="ui-button ui-button--icon ui-drawer--handle" (click)="__global.drawer.open()">
+        <i class="material-icons">menu</i>
+      </button>
+      <span class="ui-header__title">[[spec.info.title]]</span>
+    </div>
+  </header>
+
+  <div class="ui-padding scroll-x">
+    <div class="block">
+      <div class="block_row">
+        <label>OpenAPI Version</label>
+        <span>[[spec.openapi]]</span>
+      </div>
+    </div>
+
+    <div class="block">
+      <h3>Info</h3>
+
+      <div class="block_row">
+        <label>License</label>
+        <span>[[spec.info.license.name]]</span>
+      </div>
+
+      <div class="block_row">
+        <label>Title</label>
+        <span>[[spec.info.title]]</span>
+      </div>
+
+      <div class="block_row">
+        <label>Version</label>
+        <span>[[spec.info.version]]</span>
+      </div>
+    </div>
+
+    <ui-selectfield label="Selected Server" options="[[serverOptions]]" value="{{spec.selectedServer}}" class.error="[[contentTypeError]]"></ui-selectfield>
+  </div>
+</div>

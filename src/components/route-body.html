@@ -1,0 +1,11 @@
+<h4>Request Body <span class="route--required" hidden="[[route.requestBody.required|not]]">required</span></h4>
+
+<p>[[route.requestBody.description]]</p>
+
+<ui-selectfield label="Content Type" options="[[contentTypeOptions]]" value="{{contentType}}" class.error="[[contentTypeError]]"></ui-selectfield>
+
+<div class="block">
+  <value-viewer class="block__cell block--flex" schema="[[schema]]" value="{{body}}" class.error="[[bodyError]]"></value-viewer>
+  <schema-viewer class="block__cell block--flex" schema="[[schema]]"></schema-viewer>
+</div>
+
