@@ -1,0 +1,161 @@
+openapi: "3.0.0"
+info:
+  title: Mock API
+  version: 1.0.0
+  description: Mock API to show how app work
+  termsOfService: http://swagger.io/terms/
+  contact:
+    name: Ganesha
+    email: reekoheek@gmail.com
+    url: http://sagara.id
+  license:
+    name: MIT
+    url: https://github.com/reekoheek/xin-openapi/blob/master/LICENSE
+servers:
+  - url: http://localhost:3000/api
+  - url: https://other.domain/api
+paths:
+  /greet/{name}:
+    get:
+      operationId: greet
+      summary: Greet you
+      description: Provide name as in path and you will get greeting from server
+      parameters:
+        - name: name
+          in: path
+          description: your name
+          required: true
+          schema:
+            type: string
+            default: Mr Pacman
+        - name: nonce
+          in: query
+          description: random number
+          schema:
+            type: string
+            default: "1234567890"
+        - name: ping
+          in: header
+          description: hidden in mind
+          schema:
+            type: string
+            default: "foo"
+      responses:
+        200:
+          description: Greeting from server
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Greeting"
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Errors"
+  /now:
+    get:
+      operationId: now
+      summary: Current Time
+      description: Get current time of server
+      responses:
+        200:
+          description: Object of time
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Time"
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Errors"
+  /fullname:
+    post:
+      operationId: fullname
+      summary: Compute fullname
+      description: Get fullname calculated from firstname and lastname
+      requestBody:
+        description: Name to calculate
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NewName'
+      responses:
+        200:
+          description: Object of name
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Name"
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Errors"
+components:
+  schemas:
+    Time:
+      properties:
+        date:
+          type: string
+          description: ISO 8601 format date
+          default: "2017-07-12T08:40:05.998Z"
+    NewName:
+      properties:
+        first:
+          type: string
+          description: First name
+          required: true
+          default: Foo
+        last:
+          type: string
+          description: Last name
+          required: true
+          default: Bar
+    Name:
+      properties:
+        first:
+          type: string
+          description: First name
+          default: Foo
+        last:
+          type: string
+          description: Last name
+          default: Bar
+        full:
+          type: string
+          description: Full name
+          default: Foo Bar
+    Greeting:
+      properties:
+        message:
+          type: string
+          description: Greeting message
+          default: Hello, Mr Foo!
+        name:
+          type: string
+          description: Your name
+          default: Mr Foo
+    Errors:
+      type: array
+      items:
+        $ref: "#/components/schemas/Error"
+      default:
+        - code: "1"
+          message: First error
+        - code: "2"
+          message: Second error
+        - code: "000"
+          message: Unknown error
+    Error:
+      properties:
+        code:
+          type: string
+          default: "000"
+        message:
+          type: string
+          default: Unknown error
